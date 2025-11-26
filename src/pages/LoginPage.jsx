@@ -3,7 +3,7 @@ import sjsulogo from "../assets/sjsulogo.png";
 import CanvasLogo from "../assets/CanvasLogo.png";
 import notVisible from "../assets/visibility_off.svg";
 import visible from "../assets/visibility.svg";
-import "./loginpage.css";
+import "./LoginPage.css";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
