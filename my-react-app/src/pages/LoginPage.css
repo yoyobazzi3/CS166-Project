@@ -97,11 +97,9 @@
 }
 
 .lp-form-group label {
-  
   font-weight: 600;
   font-size: 1rem;
   color: #333;
-  
 }
 
 .sign-in{
@@ -110,6 +108,7 @@
 .lp-hint {
   font-size: 1rem;
   color: #999;
+  margin-top: 7px;
   margin-bottom: 4px;
   padding-bottom: 7px;
 }
