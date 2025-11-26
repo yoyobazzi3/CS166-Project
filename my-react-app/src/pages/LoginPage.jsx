@@ -18,30 +18,30 @@ export default function LoginPage() {
     setSuccess("");
 
     try {
-      const response = await fetch('http://localhost:3000/api/signup', {
-        method: 'POST',
+      const response = await fetch("http://localhost:3000/api/signup", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           sjsuId: sjsuId,
-          password: password
-        })
+          password: password,
+        }),
       });
 
       const data = await response.json();
-      console.log('Response:', data);
+      console.log("Response:", data);
 
       if (data.success) {
-        setSuccess('Account created successfully!');
+        setSuccess("Account created successfully!");
         setSjsuId("");
         setPassword("");
       } else {
-        setError(data.message || 'Signup failed');
+        setError(data.message || "Signup failed");
       }
     } catch (err) {
-      console.error('Error:', err);
-      setError('Failed to connect to server');
+      console.error("Error:", err);
+      setError("Failed to connect to server");
     }
   };
 
@@ -65,15 +65,21 @@ export default function LoginPage() {
           <div className="lp-card-body">
             <h2 className="sign-in">Sign In</h2>
 
-            {error && <div style={{color: 'red', marginBottom: '10px'}}>{error}</div>}
-            {success && <div style={{color: 'green', marginBottom: '10px'}}>{success}</div>}
+            {error && (
+              <div style={{ color: "red", marginBottom: "10px" }}>{error}</div>
+            )}
+            {success && (
+              <div style={{ color: "green", marginBottom: "10px" }}>
+                {success}
+              </div>
+            )}
 
             <form onSubmit={handleSubmit}>
               <div className="lp-form-group">
                 <label>SJSU ID Number</label>
                 <div className="lp-hint">#########</div>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   value={sjsuId}
                   onChange={(e) => setSjsuId(e.target.value)}
                   required
@@ -83,13 +89,14 @@ export default function LoginPage() {
               <div className="lp-form-group">
                 <label>Password</label>
                 <div className="lp-hint">SJSUOne Password</div>
-                <div className="lp-password-row">
-                  <input 
-                    type={showPassword ? "text" : "password"} 
+                <div className="lp-password-wrapper">
+                  <input
+                    type={showPassword ? "text" : "password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                   />
+
                   <span
                     className="lp-show-icon"
                     onClick={() => setShowPassword(!showPassword)}
@@ -134,6 +141,12 @@ export default function LoginPage() {
             </form>
           </div>
         </div>
+      </div>
+      <div className="lp-footer">
+        <span>Powered by Okta</span>
+        <a href="#" className="lp-footer-link">
+          Privacy Policy
+        </a>
       </div>
     </div>
   );
