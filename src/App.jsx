@@ -1,10 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import  LoginPage  from './pages/LoginPage.jsx'
+import LoginPage from "./pages/LoginPage.jsx";
+import InfoPage from "./pages/InfoPage.jsx";
+
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LoginPage />} />
+        {/* Default page */}
+        <Route path="/" element={<InfoPage />} />
+
+        {/* Login page */}
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </Router>
   );
