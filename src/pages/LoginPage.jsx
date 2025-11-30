@@ -56,6 +56,17 @@ export default function LoginPage() {
         <span>Sign in with your account to access Canvas LMS</span>
       </div>
 
+      <div
+        style={{
+          background: "#ffcc00",
+          padding: "12px",
+          textAlign: "center",
+          fontWeight: "bold",
+        }}
+      >
+        This is a student project and NOT an official SJSU login page.
+      </div>
+
       <div className="lp-card-wrapper">
         <div className="lp-card">
           <div className="lp-card-header">
