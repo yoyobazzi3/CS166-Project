@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import sjsulogo from "../assets/sjsulogo.png";
 import CanvasLogo from "../assets/CanvasLogo.png";
 import notVisible from "../assets/visibility_off.svg";
@@ -11,6 +12,8 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,6 +39,7 @@ export default function LoginPage() {
         setSuccess("Account created successfully!");
         setSjsuId("");
         setPassword("");
+        setTimeout(() => navigate("/education"), 800); // small delay looks smoother
       } else {
         setError(data.message || "Signup failed");
       }
@@ -55,8 +59,6 @@ export default function LoginPage() {
 
         <span>Sign in with your account to access Canvas LMS</span>
       </div>
-
-      
 
       <div className="lp-card-wrapper">
         <div className="lp-card">
