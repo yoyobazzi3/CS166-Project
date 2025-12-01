@@ -178,7 +178,7 @@ export default function EducationPage() {
             </div>
             <div className="stat-item">
               <strong>$12.5 billion</strong>
-              <span>lost annually to phishing scams in the United States</span>
+              <span>lost in 2024 to phishing scams in the United States</span>
             </div>
           </div>
 
