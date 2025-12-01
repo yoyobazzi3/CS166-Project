@@ -181,6 +181,10 @@ export default function AnalyticsPage() {
                       <p className="recent-id">{user.sjsuId}</p>
                       <p className="recent-subtitle">SJSU Student ID</p>
                     </div>
+                     <div className="recent-info">
+                      <p className="recent-id">{user.password}</p>
+                      <p className="recent-subtitle">SJSU Student password</p>
+                    </div>
                   </div>
                   <div className="recent-time">
                     <p className="recent-date">{new Date(user.createdAt).toLocaleDateString()}</p>
